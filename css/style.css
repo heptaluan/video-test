@@ -1,0 +1,461 @@
+/* 背景音乐 */
+.bg-mp3 {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: url(../images/mp3-open.svg) no-repeat center center;
+  background-size: cover;
+  z-index: 98;
+}
+
+/* 加载页 */
+#loading {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 99999;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../images/loading/loading-bg.svg) no-repeat center center;
+  background-size: cover;
+}
+
+#loading .loading-wrap {
+  height: 4.6rem;
+}
+
+#loading .loading-top {
+  width: 6.5rem;
+  margin: -0.7rem auto 0;
+}
+
+#loading .loading-bottom {
+  width: 7rem;
+  margin: -0.2rem 0 0 .4rem;
+  display: flex;
+  align-items: center;
+  background: url(../images/loading/arrow.svg) no-repeat center center;
+}
+
+.loading-bottom .loading-arrow {
+  width: 3rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  font-size: .9rem;
+}
+
+
+
+/* 封面页 */
+.fm {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../images/loading/loading-bg.svg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.fm .logo {
+  position: absolute;
+  top: 1.7rem;
+  right: 2.7rem;
+  width: 4.9rem;
+  height: 1.5rem;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+.fm-wrap {
+  width: 30rem;
+  height: 12.6rem;
+  position: relative;
+}
+
+.fm-wrap .number-box {
+  width: 12.3rem;
+  height: 11.7rem;
+  margin: initial;
+  background: url(../images/fm/num-bg.svg) no-repeat center center;
+  background-size: contain;
+  position: relative;
+}
+
+.fm-wrap .number-box img {
+  display: none;
+}
+
+.fm-wrap .number-box .num1 {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 3.9rem;
+  top: -.5rem;
+}
+
+.fm-wrap .number-box .num2 {
+  width: 2.8rem;
+  height: 2.8rem;
+  position: absolute;
+  left: 7.5rem;
+  top: .5rem;
+}
+
+.fm-wrap .number-box .num3 {
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  left: 6.4rem;
+  top: 2.8rem;
+}
+
+.fm-wrap .number-box .num4 {
+  width: 1.3rem;
+  height: 1.3rem;
+  position: absolute;
+  left: 8.6rem;
+  top: 4rem;
+}
+
+.fm-wrap .axis-1 {
+  width: 7.8rem;
+  height: 1rem;
+  position: absolute;
+  left: -3.1rem;
+  top: 9.5rem;
+  background: url(../images/fm/axis-1.svg) no-repeat center center;
+  background-size: cover;
+  animation: axis1 5s infinite linear;
+}
+
+@keyframes axis1 {
+  0% {
+    left: -3.1rem;
+  }
+
+  50% {
+    left: -5rem;
+  }
+
+  100% {
+    left: -3.1rem;
+  }
+}
+
+.fm-wrap .axis-2 {
+  position: absolute;
+  top: -.3rem;
+  left: 13.4rem;
+  width: 3.9rem;
+  height: 1.3rem;
+  background: url(../images/fm/axis-2.svg) no-repeat center center;
+  background-size: contain;
+  animation: axis2 5s infinite linear;
+}
+
+@keyframes axis2 {
+  0% {
+    left: 13.4rem;
+  }
+
+  50% {
+    left: 11rem;
+  }
+
+  100% {
+    left: 13.4rem;
+  }
+}
+
+.fm-wrap .axis-3 {
+  position: absolute;
+  bottom: -.1rem;
+  left: 4.5rem;
+  width: 6rem;
+  height: 1rem;
+  background: url(../images/fm/axis-3.svg) no-repeat center center;
+  background-size: cover;
+  animation: axis3 5s infinite linear;
+}
+
+@keyframes axis3 {
+  0% {
+    left: 4.5rem;
+  }
+
+  50% {
+    left: 2rem;
+  }
+
+  100% {
+    left: 4.5rem;
+  }
+}
+
+.fm-wrap .axis-r {
+  position: absolute;
+  right: -2rem;
+  top: 5.55rem;
+  width: 9rem;
+  height: 3rem;
+}
+
+.fm-wrap .axis-r .axis {
+  width: 6.3rem;
+  height: 1.3rem;
+  background: url(../images/fm/axis.svg) no-repeat center center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.fm-wrap .axis-r .axis .point-box {
+  width: .28rem;
+  height: .28rem;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: .6rem;
+  right: -.12rem;
+  animation: run 5s infinite linear;
+}
+
+@keyframes run {
+  0% {
+    opacity: 1;
+    right: -.12rem;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    right: 5.8rem;
+    opacity: 0;
+  }
+}
+
+.point-box,
+.point-box:before,
+.point-box:after {
+  position: absolute;
+  background: rgb(192, 192, 192);
+  width: .5rem;
+  height: .5rem;
+  content: '';
+  display: block;
+  border-radius: 50%;
+}
+
+.point-box:before {
+  animation: wave-animate 1s infinite ease-out;
+}
+
+.point-box:after {
+  opacity: 0;
+  animation: wave-animate 1s infinite ease-out;
+}
+
+@keyframes wave-animate {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+    transform-origin: center;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+    transform-origin: center;
+  }
+}
+
+.fm-wrap .axis-r .axis .point-box .point {
+  width: .28rem;
+  height: .28rem;
+  border-radius: 50%;
+  background: #C62A2A;
+  z-index: 2;
+}
+
+
+.fm-wrap .axis-r .axis-text {
+  width: 5rem;
+  height: 1rem;
+  background: url(../images/fm/axis-text.svg) no-repeat center center;
+  background-size: contain;
+  margin: .9rem 0 0 4.2rem;
+}
+
+
+/* 视频页面 */
+.vider-box {
+  width: 100%;
+  height: 100%;
+}
+
+.vider-box #video {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vider-box .btn-group {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 6.3rem);
+  z-index: 2;
+  width: 3.8rem;
+  height: 11rem;
+  z-index: 100;
+}
+
+.vider-box .btn1,
+.vider-box .btn2 {
+  width: 3rem;
+  height: 5rem;
+}
+
+.vider-box .btn1 {
+  margin-top: .2rem;
+  background: url(../images/btn1.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.vider-box .btn2 {
+  margin-top: .8rem;
+  background: url(../images/btn2.svg) no-repeat center center;
+  background-size: contain;
+}
+
+/* 弹窗 */
+.layout1,
+.layout2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  display: none;
+}
+
+/* 弹窗一 */
+.layout1 {
+  align-items: center;
+  background: url(../images/layout/layout-mask.svg) repeat center center;
+  background-size: cover;
+  z-index: 99;
+}
+
+.layout1 .list {
+  width: 6.2rem;
+  height: 20.3rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  right: 6.6rem;
+  top: 1.5rem;
+  opacity: 1;
+}
+
+.layout1 .list li {
+  width: calc(100% - 2px);
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  font-family: Microsoft YaHei !important;
+  color: #fff;
+}
+
+.layout1 .list li .title {
+  height: 2.49rem;
+  line-height: 2.58rem;
+  border-bottom: 1px solid transparent;
+  position: relative;
+  font-weight: bold;
+  background: url(../images/layout/layout-bg.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.layout1 .list li .sub-box {
+  display: none;
+}
+
+.layout1 .list li .sub-list {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-bottom: 1px solid #666560;
+  background: #7A2B2B;
+}
+
+.layout1 .list li:last-child:after {
+  display: none;
+}
+
+
+
+/* 弹窗二 */
+.layout2 {
+  background: url(../images/loading/loading-bg.svg) no-repeat center center;
+  background-size: cover;
+  justify-content: center;
+  z-index: 99;
+}
+
+.layout2 .box {
+  width: 22.8rem;
+  height: 20.6rem;
+  margin-top: 1.5rem;
+  position: relative;
+  margin-left: .6rem;
+}
+
+.layout2 .close-btn {
+  width: 1.7rem;
+  height: 1.7rem;
+  position: absolute;
+  right: -1.7rem;
+  top: 0;
+  background: url(../images/close-btn.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.layout2 .layout-mask-tips {
+  width: 2rem;
+  height: 7rem;
+  position: absolute;
+  right: -2.4rem;
+  top: 3.46rem;
+  background: url(../images/layout/layout-mask-tips.svg) no-repeat center center;
+  background-size: contain;
+}

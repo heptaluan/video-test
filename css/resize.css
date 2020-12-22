@@ -1,0 +1,106 @@
+a,
+abbr,
+b,
+body,
+dd,
+div,
+dl,
+dt,
+em,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+img,
+input,
+li,
+ol,
+p,
+pre,
+samp,
+select,
+span,
+strong,
+sub,
+sup,
+table,
+tt,
+ul,
+var {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+input {
+  outline: 0;
+  border: 0;
+}
+
+body,
+html {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+input,
+select {
+  outline: 0;
+}
+
+img,
+video {
+  width: auto\9;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  height: 100%;
+  color: #2d2d2d;
+  word-wrap: break-word;
+  font-family: Helvetica, 'Microsoft YaHei', 'å¾®è½¯é›…é»‘';
+  word-break: break-all;
+}
+
+body div,
+body p {
+  word-break: normal;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+a {
+  outline: 0;
+  color: #026acb;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
+    <title>2020</title>
+    <link rel="stylesheet" type="text/css" href="./css/resize.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+    (function(win, doc) {
+        var docEl = doc.documentElement, resizeEvt = 'oritationchange' in window ? 'oritationchange' : 'resize';
+        var clientHeight = docEl.clientHeight;
+        if (!clientHeight) return;
+        docEl.style.fontSize = 16 * (clientHeight / 375) + 'px';
+        var recalc = function() {
+            var clientHeight = docEl.clientHeight;
+            if (!clientHeight) return;
+            docEl.style.fontSize = 16 * (clientHeight / 375) + 'px';
+        }
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DomContentLoaded', recalc, false);
+    })(window, document)
+    </script>
+    <script type="text/javascript">
+    //原来是在微信易信执行Ready之前，先注册事件，所以放在所有请求的最前面
+    document.addEventListener("WeixinJSBridgeReady", function() {
+        audioAutoPlay('aud1'); //给个全局函数
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {
+        audioAutoPlay('aud1'); //给个全局函数
+    }, false);
+    </script>
+</head>
+
+<body>
+
+    <div class="bg-mp3"></div>
+
+    <div id="loading">
+        <div class="loading-wrap">
+          <div class="loading-top">
+            <img src="./images/loading/2020.svg">
+          </div>
+          <div class="loading-bottom">
+            <span id="loading-arrow" class="loading-arrow">100%</span>
+          </div>
+        </div>
+    </div>
+
+    <div id="video-box" class="vider-box">
+       <video playsinline preload="auto" muted id="video" src="./1.mp4"></video>
+       <div id="btn-group" class="btn-group">
+        <div id="right-btn1" class="btn1"></div>
+        <div id="right-btn2" class="btn2"></div>
+       </div>
+    </div>
+
+    <div id="layout1" class="layout1">
+      <div class="box">
+        <!-- <div class="close-btn"></div> -->
+        <ul id="btn-list" class="list">
+          <li>
+            <div time="0" class="title">吃</div>
+            <div class="sub-box">
+              <div time="6" class="sub-list">餐饮业</div>
+              <div time="23" class="sub-list">堂食</div>
+              <div time="39" class="sub-list">外卖</div>
+            </div>
+          </li>
+          <li>
+            <div time="52" class="title">住</div>
+            <div class="sub-box">
+              <div time="58" class="sub-list">买房</div>
+              <div time="67" class="sub-list">租房</div>
+              <div time="75" class="sub-list">酒店</div>
+            </div>
+          </li> 
+          <li>
+            <div time="84" class="title">行</div>
+            <div class="sub-box">
+              <div time="88" class="sub-list">旅游</div>
+              <div time="114" class="sub-list">客运</div>
+              <div time="123" class="sub-list">网约车</div>
+            </div>
+          </li> 
+          <li>
+            <div time="132" class="title">工作</div>
+            <div class="sub-box">
+              <div time="137" class="sub-list">就业</div>
+              <div time="144" class="sub-list">招聘</div>
+            </div>
+          </li> 
+          <li>
+            <div time="159" class="title">学习</div>
+            <div class="sub-box">
+              <div time="165" class="sub-list">网课</div>
+              <div time="177" class="sub-list">高考</div>
+            </div>
+          </li> 
+          <li>
+            <div time="192" class="title">网购</div>
+          </li> 
+          <li>
+            <div time="222" class="title">娱乐</div>
+            <div class="sub-box">
+              <div time="228" class="sub-list">观影</div>
+              <div time="245" class="sub-list">看剧</div>
+            </div>
+          </li> 
+          <li>
+            <div time="255" class="title">年终总结</div>
+          </li> 
+        </ul>
+      </div>
+    </div>
+
+    <div id="layout2" class="layout2">
+      <div class="box">
+        <div class="close-btn"></div>
+        <div class="layout-mask-tips"></div>
+      </div>
+    </div>
+
+    <!--封面-->
+    <div class="fm" id="fm">
+        <!-- <div class="logo">Logo</div> -->
+        <div class="fm-wrap">
+            <div class="number-box">
+              <img class="num1" src="./images/fm/num1.svg">
+              <img class="num2" src="./images/fm/num2.svg">
+              <img class="num3" src="./images/fm/num3.svg">
+              <img class="num4" src="./images/fm/num4.svg">
+            </div>
+            <div class="axis-1"></div>
+            <div class="axis-2"></div>
+            <div class="axis-3"></div>
+            <div id="slide" class="axis-r">
+              <div class="axis">
+                <div class="point-box">
+                  <div class="point"></div>
+                </div>
+              </div>
+              <div class="axis-text"></div>
+            </div>
+        </div>
+    </div>
+     
+
+</script>
+    <!--下面是竖屏提示,性能原因丢最后-->
+    <div id="orientLayer" class="mod-orient-layer">
+        <div class="mod-orient-layer__content">
+            <i class="icon mod-orient-layer__icon-orient"></i>
+            <div class="mod-orient-layer__desc">为了更好的体验，请锁屏后横屏浏览</div>
+        </div>
+    </div>
+    <style type="text/css">
+    /* 样式放在结尾，防止 base64 图片造成拥塞 */
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+
+        30% {
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg)
+        }
+
+        60% {
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg)
+        }
+
+        90% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+    }
+
+    @-webkit-keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+
+        30% {
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg)
+        }
+
+        60% {
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg)
+        }
+
+        90% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+    }
+
+    .mod-orient-layer {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #000000;
+        z-index: 9997
+    }
+
+    .mod-orient-layer__content {
+        position: absolute;
+        width: 100%;
+        top: 45%;
+        margin-top: -75px;
+        text-align: center
+    }
+
+    .mod-orient-layer__icon-orient {
+        display: inline-block;
+        width: 67px;
+        height: 109px;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC');
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -webkit-animation: rotation infinite 1.5s ease-in-out;
+        animation: rotation infinite 1.5s ease-in-out;
+        -webkit-background-size: 67px;
+        background-size: 67px
+    }
+
+    .mod-orient-layer__desc {
+        margin-top: 20px;
+        font-size: 15px;
+        color: #fff
+    }
+
+    .mod-orient-layer__desc {
+        margin-top: 20px;
+        font-size: 15px;
+        color: #fff
+    }
+
+    /* 竖屏提示 */
+    @media all and (orientation: portrait) {
+        #orientLayer {
+            display: block;
+        }
+    }
+
+    @media all and (orientation: landscape) {
+        #orientLayer {
+            display: none;
+        }
+    }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/iphone-inline-video.min.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?07397da1b7bf662b93ece50bb615febf";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <script>
+    $(function() {
+        var url = window.location.href.split('#')[0];
+        url = url.replace(/&/g, '%26');
+        console.log(url);
+        // var showDesc = [
+        //   '海量免费图表模板，体验一分钟数据可视化的快感！',
+        //   '为什么别人的图表都这么美观？在这里获得你的答案！',
+        //   '不会编程还可以做出这么酷炫的交互图表，被自己震惊!'
+        // ]
+        // var showImg = [
+        //   'http://image.dydata.io/SUfzS16pUzN5AaGPBcdhQy.png',
+        //   'http://image.dydata.io/TtqwmaMPy6Q4ohwAxyd2jL.png',
+        //   'http://image.dydata.io/UxVtHj3A1AKd4QmrWUVtwi.png'
+        // ]
+        // var index = Math.floor(Math.random() * 3);
+        var title, show, descText;
+
+        setTimeout(() => {
+            //descText = $('.project-description').html() ? $('.project-description').html() : 'www.dydata.io';
+            $.ajax({
+                url: "https://dydata.io/vis/share/wechat/jsshare?url=" + url,
+                type: "GET",
+                async: true,
+                cache: false,
+                dataType: "json",
+                success: function(data) {
+                    console.log("sucess");
+                    wx.config({
+                        debug: false,
+                        appId: "wxb666f3153cb1fa13",
+                        timestamp: data.data.timestamp,
+                        nonceStr: data.data.nonceStr,
+                        signature: data.data.signature,
+                        jsApiList: ['checkJsApi', 'chooseWXPay', 'onMenuShareAppMessage', 'onMenuShareTimeline']
+                    });
+
+                    wx.ready(function() {
+                        console.log("ready");
+                        title = '图表分类大作战 by dydata.io'
+
+
+                        // 分享给朋友
+                        wx.onMenuShareAppMessage({
+                            title: title,
+                            desc: '——快来挑战一下',
+                            link: url,
+                            imgUrl: 'https://ss1.dydata.io/chartgame.png',
+                            type: '',
+                            dataUrl: '',
+                            success: function() {},
+                            cancel: function() {}
+                        })
+
+                        // 朋友圈
+                        wx.onMenuShareTimeline({
+                            title: title,
+                            link: url,
+                            imgUrl: 'https://ss1.dydata.io/chartgame.png',
+                            success: function() {}
+                        })
+                    })
+                },
+                error: function() {
+                    console.log(`err`);
+                    return;
+                }
+            });
+        }, 1000);
+    });
+    </script>
+    
+</body>
+
+</html>
