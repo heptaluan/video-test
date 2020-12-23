@@ -34,6 +34,7 @@ ul,
 var {
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 img,
@@ -52,6 +53,11 @@ html {
 input,
 select {
   outline: 0;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
 }
 
 img,

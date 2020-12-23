@@ -1,13 +1,19 @@
 /* 背景音乐 */
 .bg-mp3 {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  background: url(../images/mp3-open.svg) no-repeat center center;
+  background-image: url(../images/mp3-open.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   z-index: 98;
+}
+
+.bg-mp3.close {
+  background-image: url(../images/mp3-close.svg);
 }
 
 /* 加载页 */
@@ -234,9 +240,9 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: .6rem;
+  top: .55rem;
   right: -.12rem;
-  animation: run 5s infinite linear;
+  /* animation: run 5s infinite linear; */
 }
 
 @keyframes run {
@@ -325,6 +331,7 @@
   top: 0;
   height: 100%;
   object-fit: cover;
+  z-index: 9;
 }
 
 .vider-box .btn-group {
@@ -339,7 +346,7 @@
 
 .vider-box .btn1,
 .vider-box .btn2 {
-  width: 3rem;
+  width: 2.9rem;
   height: 5rem;
 }
 
@@ -438,6 +445,12 @@
   margin-top: 1.5rem;
   position: relative;
   margin-left: .6rem;
+}
+
+.layout2 .box #share-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .layout2 .close-btn {

@@ -1,34 +1,45 @@
 $(function () {
 
 
-  var initTime = 8000
+  var initTime = 300
 
   // 加载页面
   NumAutoPlusAnimation('loading-arrow', {
     time: initTime,
     num: 100,
-    regulator: 50
+    regulator: 30
   })
 
   setTimeout(function () {
     $('#loading').fadeOut(500);
-  }, initTime - 1000);
+  }, initTime + 500);
 
   // 首页
   setTimeout(function () {
     $('.num1').fadeIn(500);
-  }, initTime);
-  setTimeout(function () {
-    $('.num2').fadeIn(500);
-  }, initTime + 500);
-  setTimeout(function () {
-    $('.num3').fadeIn(500);
   }, initTime + 1000);
   setTimeout(function () {
-    $('.num4').fadeIn(500);
+    $('.num2').fadeIn(500);
   }, initTime + 1500);
+  setTimeout(function () {
+    $('.num3').fadeIn(500);
+  }, initTime + 2000);
+  setTimeout(function () {
+    $('.num4').fadeIn(500);
+  }, initTime + 2500);
 
   // 去往视频页面
+  const video = document.getElementById('video')
+  const audio = document.getElementById('aud1')
+  video.setAttribute('x5-video-player-type', 'h5');
+  video.setAttribute('x-webkit-airplay', true);
+  video.setAttribute('x5-video-player-fullscreen', true);
+  video.setAttribute('x5-video-ignore-metadata', true);
+  video.setAttribute('object-fit', 'fill');
+  video.setAttribute('object-position', 'center center');
+  video.setAttribute('playsinline', '')
+  enableInlineVideo(video)
+  setTimeout(function () { video.play(); }, 1000)
   // let startX, startY, endX, endY, distanceX, distanceY
   // $('body').bind('touchstart', function (e) {
   //   startX = e.originalEvent.changedTouches[0].pageX
@@ -39,24 +50,50 @@ $(function () {
   //   endY = e.originalEvent.changedTouches[0].pageY;
   //   distanceX = endX - startX;
   //   distanceY = endY - startY;
-  //   if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX < 0) {
+  //   if (Math.abs(distanceX) < Math.abs(distanceY) && distanceY < 0) {
   //     $('#fm').fadeOut(500);
   //     $('#btn-group').fadeIn(500)
-  //     var promise = video.play();
-  //     if (promise) {
-  //       promise.catch(function (error) { console.log(error) });
-  //     }
+  //     video.currentTime = 0
+  //     video.play()
   //   }
   // });
-
-  const video = document.getElementById('video')
-  enableInlineVideo(video)
-  video.setAttribute('playsinline', '')
+  
   $('#slide').click(function () {
     $('#fm').fadeOut(500);
     $('#btn-group').fadeIn(500)
+    audioAutoPlay('aud1');
+    video.currentTime = 0
     video.play();
+    audio.play();
   })
+
+  function audioAutoPlay(id) {
+    var audio = document.getElementById(id);
+    var play = function () {
+      document.removeEventListener("WeixinJSBridgeReady", play);
+      document.removeEventListener("YixinJSBridgeReady", play);
+      audio.play();
+    };
+    audio.play();
+    //weixin
+    document.addEventListener("WeixinJSBridgeReady", play, false);
+    //yixin
+    document.addEventListener('YixinJSBridgeReady', play, false);
+  }
+  audioAutoPlay('video');
+
+
+
+  // 背景音乐
+  $('.bg-mp3').click(function() {
+    $(this).toggleClass('close')
+    if ($(this).hasClass('close')) {
+      audio.pause()
+    } else {
+      audio.play()
+    }
+  })
+
 
 
   // 弹窗一
@@ -124,10 +161,7 @@ $(function () {
 
   function showMask(index) {
     $('#layout2').fadeIn(500).css('display', 'flex')
-    $('.layout2 .box').css({
-      background: `url(./images/list/${index}.png) no-repeat center center`,
-      backgroundSize: 'contain'
-    })
+    $('.layout2 #share-img').attr('src', `./images/list/${index}.png`)
     video.pause()
   }
 
@@ -145,10 +179,11 @@ $(function () {
   $('#btn-list .sub-list, #btn-list .title').click(function () {
     if ($(this).attr('time')) {
       video.currentTime = $(this).attr('time') | 0
-      console.log(video.currentTime)
       video.play()
     }
   })
+
+
 
 
 
